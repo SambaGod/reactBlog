@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
+  NavLink,
   NavItem,
 } from 'reactstrap';
 
@@ -22,23 +22,12 @@ const NavBar = props => {
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className='mr-auto' navbar>
-          <Router>
-            <NavItem>
-              <Link className='nav-link' to='/about'>
-                About
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link className='nav-link' to='/articles-list'>
-                Articles List
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link className='nav-link' to='/articles'>
-                Articles Page
-              </Link>
-            </NavItem>
-          </Router>
+          <NavItem>
+            <NavLink href='/about'>About</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='/articles-list'>Articles List</NavLink>
+          </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
