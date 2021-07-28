@@ -9,6 +9,16 @@
 
 # Dependencies
 
+Frontend
+
 - `react-router-dom`
 - `bootstrap`
 - `reactstrap`
+
+Backend
+
+- `express`
+- `bodyparser`
+- `mongodb`
+- dev `@babel/core @babel/node @babel/preset-env`
+- dev `nodemon`
