@@ -14,6 +14,7 @@ Frontend
 - `react-router-dom`
 - `bootstrap`
 - `reactstrap`
+- `whatwg-fetch`
 
 Backend
 
