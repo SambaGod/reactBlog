@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
-import ArticleContent from './article-content';
+import articleContent from './article-content';
+import ArticlesList from '../components/ArticlesList';
 
 function ArticlePage({ match }) {
   const name = match.params.name;
-  const article = ArticleContent.find(article => article.name === name);
+  const article = articleContent.find(article => article.name === name);
+  const otherArticles = articleContent.filter(article => article.name !== name);
   if (!article) return <h1>Searched article doesn't exist</h1>;
   return (
     <Fragment>
@@ -17,6 +19,8 @@ function ArticlePage({ match }) {
           <li key={key}>{list}</li>
         ))}
       </ul>
+
+      <ArticlesList articles={otherArticles} />
     </Fragment>
   );
 }

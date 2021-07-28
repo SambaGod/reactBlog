@@ -4,9 +4,10 @@ import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ArticlePage from './pages/ArticlePage';
-import ArticlesList from './pages/ArticlesList';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ArticlesListPage from './pages/ArticlesListPage';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import NotFoundPage from './pages/NotFoundPage';
 
 class App extends Component {
   render() {
@@ -15,10 +16,13 @@ class App extends Component {
         <NavBar />
         <Container>
           <Router>
-            <Route path='/' component={HomePage} exact />
-            <Route path='/about' component={AboutPage} />
-            <Route path='/articles-list' component={ArticlesList} />
-            <Route path='/articles/:name' component={ArticlePage} />
+            <Switch>
+              <Route path='/' component={HomePage} exact />
+              <Route path='/about' component={AboutPage} />
+              <Route path='/articles-list' component={ArticlesListPage} />
+              <Route path='/articles/:name' component={ArticlePage} />
+              <Route component={NotFoundPage} />
+            </Switch>
           </Router>
         </Container>
       </Fragment>
